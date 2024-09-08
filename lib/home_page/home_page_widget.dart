@@ -438,14 +438,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       fit: BoxFit.cover,
                     ),
                   ),
-                Lottie.asset(
-                  'assets/lottie_animations/Animao_Baixo.json',
-                  width: 414.0,
-                  height: 123.0,
-                  fit: BoxFit.contain,
-                  repeat: false,
-                  animate: true,
-                ),
+                if (responsiveVisibility(
+                  context: context,
+                  tablet: false,
+                  tabletLandscape: false,
+                  desktop: false,
+                ))
+                  Lottie.asset(
+                    'assets/lottie_animations/Animao_Baixo.json',
+                    width: 414.0,
+                    height: 123.0,
+                    fit: BoxFit.contain,
+                    repeat: false,
+                    animate: true,
+                  ),
               ],
             ),
           ),
